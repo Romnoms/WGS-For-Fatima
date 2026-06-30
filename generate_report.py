@@ -227,9 +227,10 @@ footer {{
 
 <p>
     This report summarizes whole genome sequencing (WGS) analysis of <strong>16 mouse tumor samples</strong>
-    sequenced on an Illumina platform (2x151 bp paired-end reads) and processed with the
-    <strong>DRAGEN v13.021</strong> pipeline for alignment to the GRCm39 reference genome and
-    somatic variant calling in tumor-only mode. Variants were annotated with Ensembl VEP.
+    (all confirmed tumor, no matched normal controls available) sequenced on an Illumina platform
+    (2x151 bp paired-end reads) and processed with the <strong>DRAGEN v13.021</strong> pipeline for
+    alignment to the GRCm39 reference genome and somatic variant calling in tumor-only mode.
+    Variants were annotated with Ensembl VEP.
 </p>
 
 <div class="stats-grid">
@@ -488,13 +489,12 @@ footer {{
 
 <h3>Recommended Next Steps</h3>
 <ol>
-    <li><strong>Obtain sample metadata</strong> &mdash; Map sequencing IDs to biological sample
-        names, treatment groups, and mouse IDs for group-level comparisons.</li>
-    <li><strong>Re-process with matched normals</strong> &mdash; If matched normal samples are
-        available, re-run somatic calling with tumor&ndash;normal pairing to remove germline
-        contamination.</li>
-    <li><strong>Panel of Normals (PoN)</strong> &mdash; If no matched normals exist, construct
-        a panel of normals from the same strain background to filter common germline variants.</li>
+    <li><strong>Obtain matched normals</strong> &mdash; All 16 samples are confirmed tumor with
+        no matched normal controls. Acquiring matched normal tissue from the same mice would
+        enable proper germline subtraction and dramatically improve somatic call specificity.</li>
+    <li><strong>Panel of Normals (PoN)</strong> &mdash; In the absence of matched normals, construct
+        a panel of normals from the same strain background to filter common germline variants.
+        This is the most practical path to cleaner somatic calls with the current dataset.</li>
     <li><strong>Mutational signature analysis</strong> &mdash; Run SigProfiler or a similar
         tool to decompose the mutation spectra into COSMIC signatures, especially for
         hypermutated samples S04 and S15.</li>
