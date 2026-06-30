@@ -1,0 +1,42 @@
+name: wgs
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  # QC
+  - fastqc
+  - multiqc
+  - fastp
+  # Alignment
+  - bwa-mem2
+  - samtools
+  - sambamba
+  # Variant calling
+  - gatk4
+  - bcftools
+  - freebayes
+  # Variant annotation & filtering
+  - snpeff
+  - snpsift
+  - vcftools
+  # Structural variants
+  - delly
+  - manta
+  # Copy number
+  - cnvkit
+  # Utilities
+  - picard
+  - bedtools
+  - mosdepth
+  - igvtools
+  - tabix
+  # Scripting
+  - python>=3.11
+  - pandas
+  - numpy
+  - matplotlib
+  - seaborn
+  - pysam
+  - cyvcf2
+  - jupyter

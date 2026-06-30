@@ -1,0 +1,101 @@
+gene,consequence,n_samples,n_variants,samples
+Mroh2a,stop_gained,16,95,"S01, S02, S03, S04, S05, S06, S07, S08, S09, S10, S11, S12, S13, S14, S15, S16"
+Vmn2r117,frameshift_variant,16,51,"S01, S02, S03, S04, S05, S06, S07, S08, S09, S10, S11, S12, S13, S14, S15, S16"
+Mroh2a,frameshift_variant,16,47,"S01, S02, S03, S04, S05, S06, S07, S08, S09, S10, S11, S12, S13, S14, S15, S16"
+Thap1,frameshift_variant,16,46,"S01, S02, S03, S04, S05, S06, S07, S08, S09, S10, S11, S12, S13, S14, S15, S16"
+Vmn2r115,stop_gained,16,45,"S01, S02, S03, S04, S05, S06, S07, S08, S09, S10, S11, S12, S13, S14, S15, S16"
+Vmn2r117,stop_gained,16,24,"S01, S02, S03, S04, S05, S06, S07, S08, S09, S10, S11, S12, S13, S14, S15, S16"
+,splice_acceptor_variant&non_coding_transcript_variant,16,20,"S01, S02, S03, S04, S05, S06, S07, S08, S09, S10, S11, S12, S13, S14, S15, S16"
+,stop_gained,16,16,"S01, S02, S03, S04, S05, S06, S07, S08, S09, S10, S11, S12, S13, S14, S15, S16"
+Gm13230,splice_acceptor_variant&splice_polypyrimidine_tract_variant&intron_variant&non_coding_transcript_variant,16,16,"S01, S02, S03, S04, S05, S06, S07, S08, S09, S10, S11, S12, S13, S14, S15, S16"
+Gm14401,splice_donor_variant,16,16,"S01, S02, S03, S04, S05, S06, S07, S08, S09, S10, S11, S12, S13, S14, S15, S16"
+Hjurp,frameshift_variant,16,16,"S01, S02, S03, S04, S05, S06, S07, S08, S09, S10, S11, S12, S13, S14, S15, S16"
+Hsp90ab1,frameshift_variant,16,16,"S01, S02, S03, S04, S05, S06, S07, S08, S09, S10, S11, S12, S13, S14, S15, S16"
+Ugt1a6a,splice_donor_variant,16,16,"S01, S02, S03, S04, S05, S06, S07, S08, S09, S10, S11, S12, S13, S14, S15, S16"
+Zfp979,stop_gained,16,16,"S01, S02, S03, S04, S05, S06, S07, S08, S09, S10, S11, S12, S13, S14, S15, S16"
+Zfp979,stop_lost,16,16,"S01, S02, S03, S04, S05, S06, S07, S08, S09, S10, S11, S12, S13, S14, S15, S16"
+Vmn2r114,frameshift_variant,15,21,"S01, S02, S03, S04, S05, S06, S07, S08, S09, S10, S11, S12, S13, S15, S16"
+Vmn2r114,stop_gained,15,18,"S01, S02, S03, S05, S06, S07, S08, S09, S10, S11, S12, S13, S14, S15, S16"
+Speer4cos,splice_donor_variant&non_coding_transcript_variant,15,15,"S01, S02, S03, S04, S05, S07, S08, S09, S10, S11, S12, S13, S14, S15, S16"
+Ugt1a6a,frameshift_variant,14,14,"S01, S02, S03, S05, S06, S07, S08, S09, S10, S11, S12, S13, S14, S16"
+,splice_acceptor_variant,13,13,"S03, S04, S05, S07, S08, S09, S10, S11, S12, S13, S14, S15, S16"
+Vmn2r115,frameshift_variant,11,11,"S01, S03, S04, S05, S06, S08, S09, S10, S14, S15, S16"
+Pfdn2,splice_donor_variant&splice_donor_5th_base_variant&coding_sequence_variant&intron_variant,9,9,"S01, S02, S05, S06, S08, S09, S10, S13, S14"
+Cdv3,frameshift_variant,8,8,"S01, S02, S03, S05, S06, S07, S13, S14"
+Gm16092,splice_acceptor_variant&non_coding_transcript_variant,5,5,"S06, S08, S11, S12, S16"
+Gm21411,stop_gained,3,3,"S01, S02, S07"
+,splice_donor_variant&non_coding_transcript_variant,2,9,"S04, S15"
+As3mt,splice_donor_variant,2,2,"S01, S15"
+Crb1,frameshift_variant,2,2,"S04, S15"
+Grhl1,frameshift_variant,1,2,S15
+Zfp982,frameshift_variant,1,2,S01
+,frameshift_variant,1,1,S01
+1700034P13Rik,splice_acceptor_variant&non_coding_transcript_variant,1,1,S04
+2310016D03Rik,splice_acceptor_variant&non_coding_transcript_variant,1,1,S15
+4930500L23Rik,splice_donor_variant&non_coding_transcript_variant,1,1,S04
+9030624G23Rik,frameshift_variant&splice_region_variant,1,1,S15
+9030624G23Rik,stop_gained,1,1,S15
+9430065F17Rik,splice_donor_variant&non_coding_transcript_variant,1,1,S04
+Arhgap22,splice_acceptor_variant,1,1,S09
+BC064078,splice_acceptor_variant&non_coding_transcript_variant,1,1,S04
+Casp2,frameshift_variant,1,1,S07
+Ccdc142,stop_gained,1,1,S01
+Cd1d2,frameshift_variant,1,1,S15
+Col19a1,splice_acceptor_variant,1,1,S14
+Cyp2d26,stop_gained,1,1,S05
+Dppa5c,splice_donor_variant&splice_donor_5th_base_variant&non_coding_transcript_exon_variant&intron_variant,1,1,S15
+Fam227a,splice_acceptor_variant,1,1,S16
+Fam234b,frameshift_variant,1,1,S04
+Garin1a,splice_donor_variant,1,1,S11
+Gm10069,splice_acceptor_variant&non_coding_transcript_variant,1,1,S04
+Gm10985,frameshift_variant,1,1,S04
+Gm17767,splice_donor_variant&non_coding_transcript_variant,1,1,S15
+Gm21560,frameshift_variant,1,1,S08
+Gm21940,splice_donor_variant&non_coding_transcript_variant,1,1,S04
+Gm31333,splice_acceptor_variant&non_coding_transcript_variant,1,1,S04
+Gm35037,splice_acceptor_variant&non_coding_transcript_variant,1,1,S15
+Gm36129,splice_acceptor_variant&non_coding_transcript_exon_variant,1,1,S15
+Gm36582,splice_donor_variant&non_coding_transcript_variant,1,1,S04
+Gm36640,splice_acceptor_variant&non_coding_transcript_variant,1,1,S04
+Gm36723,splice_acceptor_variant&non_coding_transcript_variant,1,1,S15
+Gm43264,splice_donor_variant&non_coding_transcript_variant,1,1,S15
+Gm47194,splice_acceptor_variant&non_coding_transcript_variant,1,1,S04
+Gm47847,splice_acceptor_variant&non_coding_transcript_exon_variant&intron_variant,1,1,S15
+Gm49576,splice_acceptor_variant&non_coding_transcript_exon_variant&intron_variant,1,1,S04
+Gm53052,splice_acceptor_variant&non_coding_transcript_variant,1,1,S04
+Gm56537,splice_acceptor_variant&non_coding_transcript_variant,1,1,S15
+Helz2,frameshift_variant,1,1,S16
+Il12rb2,stop_gained,1,1,S15
+Impg2,splice_acceptor_variant&non_coding_transcript_variant,1,1,S04
+Klra17,start_lost,1,1,S04
+Klra9,stop_gained,1,1,S04
+Klrb1a,start_lost,1,1,S04
+Macc1,splice_donor_variant,1,1,S15
+Nacad,frameshift_variant,1,1,S16
+Nxpe5,frameshift_variant,1,1,S04
+Or4p4,stop_gained,1,1,S16
+Or4p4b-ps1,frameshift_variant,1,1,S03
+Or4p7,frameshift_variant,1,1,S16
+Or5h24,frameshift_variant,1,1,S04
+Or5h24,stop_lost,1,1,S04
+Or5h27,frameshift_variant,1,1,S04
+Or5k8,frameshift_variant,1,1,S04
+Or8j3c,frameshift_variant,1,1,S14
+Or8k24,frameshift_variant,1,1,S16
+Or8k27,frameshift_variant,1,1,S16
+P3h3,splice_acceptor_variant,1,1,S14
+Pccb,start_lost&start_retained_variant&5_prime_UTR_variant,1,1,S11
+Pimreg,frameshift_variant,1,1,S09
+Polr3d,frameshift_variant,1,1,S15
+Prb1c,frameshift_variant,1,1,S04
+Rhbdf2,frameshift_variant,1,1,S16
+Sclt1,frameshift_variant&start_lost&start_retained_variant,1,1,S15
+Setx,frameshift_variant,1,1,S03
+Sfi1,stop_gained,1,1,S13
+Sprr2g,frameshift_variant,1,1,S15
+Tdpoz2,frameshift_variant,1,1,S15
+Ttc14,splice_acceptor_variant&splice_donor_variant&splice_donor_5th_base_variant&splice_polypyrimidine_tract_variant&intron_variant,1,1,S15
+Ttn,splice_donor_variant,1,1,S16
+Vmn2r115,splice_donor_variant,1,1,S04
+Vmn2r116,stop_gained,1,1,S06
+Zfp459,frameshift_variant,1,1,S04
