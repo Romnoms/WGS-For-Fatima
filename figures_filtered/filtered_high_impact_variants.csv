@@ -1,0 +1,38 @@
+gene,consequence,n_samples,n_variants,samples
+Pfdn2,splice_donor_variant&splice_donor_5th_base_variant&coding_sequence_variant&intron_variant,9,9,"S01, S02, S05, S06, S08, S09, S10, S13, S14"
+Cdv3,frameshift_variant,8,8,"S01, S02, S03, S05, S06, S07, S13, S14"
+Vmn2r114,frameshift_variant,6,6,"S03, S05, S06, S09, S12, S13"
+Vmn2r117,frameshift_variant,5,6,"S02, S07, S12, S14, S16"
+As3mt,splice_donor_variant,2,2,"S01, S15"
+Zfp982,frameshift_variant,1,2,S01
+,frameshift_variant,1,1,S01
+Arhgap22,splice_acceptor_variant,1,1,S09
+Casp2,frameshift_variant,1,1,S07
+Ccdc142,stop_gained,1,1,S01
+Col19a1,splice_acceptor_variant,1,1,S14
+Cyp2d26,stop_gained,1,1,S05
+Dppa5c,splice_donor_variant&splice_donor_5th_base_variant&non_coding_transcript_exon_variant&intron_variant,1,1,S15
+Fam227a,splice_acceptor_variant,1,1,S16
+Garin1a,splice_donor_variant,1,1,S11
+Gm10985,frameshift_variant,1,1,S04
+Gm21560,frameshift_variant,1,1,S08
+Gm49576,splice_acceptor_variant&non_coding_transcript_exon_variant&intron_variant,1,1,S04
+Helz2,frameshift_variant,1,1,S16
+Il12rb2,stop_gained,1,1,S15
+Mroh2a,frameshift_variant,1,1,S04
+Nxpe5,frameshift_variant,1,1,S04
+Or4p4,stop_gained,1,1,S16
+Or4p7,frameshift_variant,1,1,S16
+Or5k8,frameshift_variant,1,1,S04
+Or8j3c,frameshift_variant,1,1,S14
+Or8k24,frameshift_variant,1,1,S16
+Or8k27,frameshift_variant,1,1,S16
+P3h3,splice_acceptor_variant,1,1,S14
+Pimreg,frameshift_variant,1,1,S09
+Polr3d,frameshift_variant,1,1,S15
+Prb1c,frameshift_variant,1,1,S04
+Rhbdf2,frameshift_variant,1,1,S16
+Setx,frameshift_variant,1,1,S03
+Sfi1,stop_gained,1,1,S13
+Ttc14,splice_acceptor_variant&splice_donor_variant&splice_donor_5th_base_variant&splice_polypyrimidine_tract_variant&intron_variant,1,1,S15
+Ttn,splice_donor_variant,1,1,S16

@@ -39,9 +39,24 @@ def csv_to_table(rows, columns=None):
 
 
 # Load data
+FILT_DIR = os.path.expanduser('~/wgs-project/figures_filtered')
+
+
+def read_csv_from(directory, filename):
+    with open(os.path.join(directory, filename)) as f:
+        return list(csv.DictReader(f))
+
+
+def filt_img_b64(filename):
+    with open(os.path.join(FILT_DIR, filename), 'rb') as f:
+        return base64.b64encode(f.read()).decode()
+
+
 qc_data = read_csv('qc_summary.csv')
 variant_data = read_csv('variant_summary.csv')
 high_impact = read_csv('high_impact_variants.csv')
+filtered_variant_data = read_csv_from(FILT_DIR, 'filtered_variant_summary.csv')
+filtered_high_impact = read_csv_from(FILT_DIR, 'filtered_high_impact_variants.csv')
 
 html = f"""<!DOCTYPE html>
 <html lang="en">
@@ -219,6 +234,17 @@ footer {{
         <li><a href="#chrom">Chromosomal Distribution</a></li>
         <li><a href="#high-impact">High Impact Variants</a></li>
         <li><a href="#caveats">Caveats &amp; Next Steps</a></li>
+    </ol>
+    <h3 style="margin-top:1rem;">Part II: Filtered Analysis</h3>
+    <ol start="12">
+        <li><a href="#filtering">Germline Filtering Strategy</a></li>
+        <li><a href="#filt-burden">Filtered Mutation Burden</a></li>
+        <li><a href="#filt-spectrum">Filtered Mutation Spectrum</a></li>
+        <li><a href="#filt-impact">Filtered Functional Impact</a></li>
+        <li><a href="#filt-genes">Filtered Recurrently Mutated Genes</a></li>
+        <li><a href="#filt-vaf">Filtered VAF Distribution</a></li>
+        <li><a href="#filt-chrom">Filtered Chromosomal Distribution</a></li>
+        <li><a href="#filt-high">Filtered High Impact Variants</a></li>
     </ol>
 </div>
 
@@ -506,9 +532,170 @@ footer {{
         to identify translocations, inversions, and large-scale rearrangements.</li>
 </ol>
 
+<!-- ================================================================== -->
+<!-- PART II: FILTERED ANALYSIS                                         -->
+<!-- ================================================================== -->
+
+<header style="margin-top:3rem;">
+    <h1>Part II: Filtered Somatic Analysis</h1>
+    <p>After MGP Germline Subtraction &amp; Cross-Sample Recurrence Filtering</p>
+</header>
+
+<h2 id="filtering">12. Germline Filtering Strategy</h2>
+
+<p>
+    To address the germline contamination inherent in tumor-only somatic calling,
+    a two-pass filtering strategy was applied:
+</p>
+
+<ol>
+    <li><strong>MGP Allele Frequency Filter</strong> &mdash; Variants with a Mouse Genomes Project
+        (MGP) allele frequency &ge; 1% were removed as known strain germline variants. This
+        eliminated ~70% of variants in most samples, and &gt;90% in hypermutated samples S04 and S15.</li>
+    <li><strong>Cross-Sample Recurrence Filter</strong> &mdash; Variants present in &gt;10 of 16
+        samples were removed, as true somatic mutations are unlikely to recur across independent
+        tumors. This removed an additional ~8,000 shared variants per sample.</li>
+</ol>
+
+<div class="callout callout-info">
+    <strong>Filtering Impact</strong>
+    On average, <strong>88% of variants were removed</strong> as likely germline. The filtered call
+    set retains ~4,000&ndash;17,000 variants per sample, with TMB values of 1.5&ndash;6.4 mut/Mb
+    &mdash; far more consistent with expected somatic mutation rates in mouse tumors.
+</div>
+
+<div class="figure-container">
+    <img src="data:image/png;base64,{filt_img_b64('01_filtering_comparison.png')}" alt="Filtering Comparison">
+    <div class="figure-caption">
+        Figure 10. Impact of germline filtering. Left: variant counts before (gray) and after
+        (green) filtering. Right: percentage of variants retained per sample. S04 and S15 had
+        the lowest retention rates (5&ndash;6%), indicating their excess variants were predominantly germline.
+    </div>
+</div>
+
+<h3>Filtered Variant Summary</h3>
+{csv_to_table(filtered_variant_data)}
+
+<!-- ================================================================== -->
+<h2 id="filt-burden">13. Filtered Mutation Burden</h2>
+
+<p>
+    After filtering, S04 and S15 remain elevated (~2&ndash;3x the cohort median) but are no longer
+    the dramatic outliers seen in the unfiltered data. S04 retains 14,489 variants (5.3 mut/Mb)
+    and S15 retains 17,335 (6.4 mut/Mb), compared to a cohort median of ~5,500 (~2.0 mut/Mb).
+    Notably, S14 and S16 also emerge as moderately elevated.
+</p>
+
+<div class="figure-container">
+    <img src="data:image/png;base64,{filt_img_b64('02_filtered_mutation_burden.png')}" alt="Filtered Mutation Burden">
+    <div class="figure-caption">
+        Figure 11. Filtered somatic mutation burden. TMB values now range from 1.5&ndash;6.4 mut/Mb,
+        consistent with expected mouse tumor somatic mutation rates.
+    </div>
+</div>
+
+<!-- ================================================================== -->
+<h2 id="filt-spectrum">14. Filtered Mutation Spectrum</h2>
+
+<p>
+    With germline variants removed, sample-to-sample spectral differences become more apparent.
+    The mutation spectrum is more balanced across substitution classes compared to the
+    unfiltered data, where germline C&gt;T and T&gt;C transitions dominated.
+</p>
+
+<div class="figure-container">
+    <img src="data:image/png;base64,{filt_img_b64('04_filtered_mutation_spectrum.png')}" alt="Filtered Mutation Spectrum">
+    <div class="figure-caption">
+        Figure 12. Filtered somatic SNV mutation spectrum. The proportional differences between
+        samples are now more evident, enabling more informative mutational signature analysis.
+    </div>
+</div>
+
+<!-- ================================================================== -->
+<h2 id="filt-impact">15. Filtered Functional Impact</h2>
+
+<div class="figure-container">
+    <img src="data:image/png;base64,{filt_img_b64('05_filtered_vep_impact.png')}" alt="Filtered VEP Impact">
+    <div class="figure-caption">
+        Figure 13. Filtered VEP impact classification. The proportion of HIGH and MODERATE impact
+        variants is reduced after filtering, as many protein-coding germline polymorphisms have
+        been removed.
+    </div>
+</div>
+
+<div class="figure-container">
+    <img src="data:image/png;base64,{filt_img_b64('06_filtered_top_consequences.png')}" alt="Filtered Top Consequences">
+    <div class="figure-caption">
+        Figure 14. Top 15 VEP consequence types in filtered variants.
+    </div>
+</div>
+
+<!-- ================================================================== -->
+<h2 id="filt-genes">16. Filtered Recurrently Mutated Genes</h2>
+
+<p>
+    After filtering, the recurrently mutated gene list is substantially different from the
+    unfiltered analysis. The highly polymorphic Zfp, Vmn2r, and Mroh2a gene families that
+    dominated the unfiltered list are largely removed. The remaining recurrent genes are
+    more likely to represent genuine somatic cancer-associated events.
+</p>
+
+<div class="figure-container">
+    <img src="data:image/png;base64,{filt_img_b64('07_filtered_recurrent_genes.png')}" alt="Filtered Recurrent Genes">
+    <div class="figure-caption">
+        Figure 15. Top recurrently mutated genes after germline filtering (HIGH/MODERATE impact).
+        These represent a curated list more likely to contain true somatic events.
+    </div>
+</div>
+
+<!-- ================================================================== -->
+<h2 id="filt-vaf">17. Filtered VAF Distribution</h2>
+
+<p>
+    The filtered VAF distribution shows a markedly different profile compared to the unfiltered
+    data. While a residual peak at ~0.5 persists (some germline variants without MGP annotation
+    remain), the distribution is now broader with substantially more variants at lower VAFs,
+    consistent with subclonal somatic mutations.
+</p>
+
+<div class="figure-container">
+    <img src="data:image/png;base64,{filt_img_b64('08_filtered_vaf_distribution.png')}" alt="Filtered VAF Distribution">
+    <div class="figure-caption">
+        Figure 16. Filtered VAF distribution. The shift toward lower allele frequencies compared
+        to the unfiltered data is consistent with enrichment for true somatic variants.
+    </div>
+</div>
+
+<!-- ================================================================== -->
+<h2 id="filt-chrom">18. Filtered Chromosomal Distribution</h2>
+
+<div class="figure-container">
+    <img src="data:image/png;base64,{filt_img_b64('09_filtered_chrom_density.png')}" alt="Filtered Chromosomal Density">
+    <div class="figure-caption">
+        Figure 17. Chromosomal variant density after filtering. Regional hotspots are more
+        clearly resolved without the uniform germline background.
+    </div>
+</div>
+
+<!-- ================================================================== -->
+<h2 id="filt-high">19. Filtered High Impact Variants</h2>
+
+<p>
+    After filtering, <strong>{len(filtered_high_impact)}</strong> unique gene&ndash;consequence
+    combinations remain classified as HIGH impact. This curated list is substantially smaller
+    and more likely to contain genuine somatic loss-of-function events.
+</p>
+
+{csv_to_table(filtered_high_impact[:25], ['gene', 'consequence', 'n_samples', 'n_variants', 'samples'])}
+
+<p style="font-size:0.85rem; color:#64748b; margin-top:0.5rem;">
+    Full table available in <code>filtered_high_impact_variants.csv</code>.
+</p>
+
 <footer>
     WGS Analysis Report &bull; Project 26034-04 &bull; Generated June 30, 2026<br>
-    Reference: GRCm39 (Mus musculus) &bull; Pipeline: DRAGEN v13.021 + Ensembl VEP
+    Reference: GRCm39 (Mus musculus) &bull; Pipeline: DRAGEN v13.021 + Ensembl VEP<br>
+    Germline filtering: MGP AF &ge; 1% + cross-sample recurrence &gt; 10/16
 </footer>
 
 </body>
