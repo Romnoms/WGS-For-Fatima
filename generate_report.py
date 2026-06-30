@@ -253,10 +253,12 @@ footer {{
 
 <p>
     This report summarizes whole genome sequencing (WGS) analysis of <strong>16 mouse tumor samples</strong>
-    (all confirmed tumor, no matched normal controls available) sequenced on an Illumina platform
-    (2x151 bp paired-end reads) and processed with the <strong>DRAGEN v13.021</strong> pipeline for
-    alignment to the GRCm39 reference genome and somatic variant calling in tumor-only mode.
-    Variants were annotated with Ensembl VEP.
+    on a <strong>C57BL/6 (Black 6) background</strong> (all confirmed tumor, no matched normal
+    controls available). Samples were sequenced on an Illumina platform (2x151 bp paired-end reads)
+    and processed with the <strong>DRAGEN v13.021</strong> pipeline for alignment to the GRCm39
+    reference genome and somatic variant calling in tumor-only mode. Variants were annotated with
+    Ensembl VEP. Since GRCm39 is derived from the C57BL/6J strain, variants called against this
+    reference in B6-background tumors are expected to be predominantly somatic in origin.
 </p>
 
 <div class="stats-grid">
@@ -559,9 +561,10 @@ footer {{
 
 <div class="callout callout-info">
     <strong>Filtering Impact</strong>
-    On average, <strong>88% of variants were removed</strong> as likely germline. The filtered call
-    set retains ~4,000&ndash;17,000 variants per sample, with TMB values of 1.5&ndash;6.4 mut/Mb
-    &mdash; far more consistent with expected somatic mutation rates in mouse tumors.
+    On average, <strong>88% of variants were removed</strong> as likely germline or shared artifacts.
+    The filtered call set retains ~4,000&ndash;17,000 variants per sample, with TMB values of
+    1.5&ndash;6.4 mut/Mb. Because these tumors are on a C57BL/6 background and GRCm39 is derived
+    from C57BL/6J, the filtered variants are expected to be predominantly somatic in origin.
 </div>
 
 <div class="figure-container">
