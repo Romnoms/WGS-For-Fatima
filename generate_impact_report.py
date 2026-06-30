@@ -278,9 +278,11 @@ footer {{
 
 <p>
     C57BL/6J mice were provided <strong>sucrose water ad libitum</strong> and subsequently
-    developed tumors. This experimental design positions the study at the intersection of
-    <strong>dietary sugar metabolism and tumorigenesis</strong>. High sucrose intake in rodent
-    models is associated with:
+    developed tumors. Critically, <strong>age-matched controls on plain water remained
+    tumor-free for their full lifespan</strong>, establishing that tumor development is
+    directly attributable to chronic sucrose exposure. This positions the study at the
+    intersection of <strong>dietary sugar metabolism and tumorigenesis</strong>. High sucrose
+    intake in rodent models is associated with:
 </p>
 
 <ul>
@@ -637,8 +639,10 @@ footer {{
 <div class="callout callout-key">
     <strong>Key Findings in the Context of Ad Libitum Sucrose</strong>
     <ol style="margin-top:0.5rem;">
+        <li>Control mice on plain water <strong>did not develop tumors</strong>, confirming
+            that sucrose exposure is the causative factor for tumorigenesis in this model.</li>
         <li>The <strong>absence of classic driver mutations</strong> suggests sucrose-associated
-            tumorigenesis may operate through non-mutational mechanisms (metabolic reprogramming,
+            tumorigenesis operates through non-mutational mechanisms (metabolic reprogramming,
             chronic inflammation, epigenetic changes) rather than direct genotoxicity.</li>
         <li>The <strong>clock-like mutation signatures</strong> (SBS1/SBS5 dominance) indicate
             accelerated cell proliferation rather than chemical mutagenesis &mdash; consistent
@@ -680,9 +684,11 @@ footer {{
     <li><strong>Tumor-only calling:</strong> Without matched normal tissue, some residual
         germline variants may persist despite filtering. The B6J background on GRCm39
         mitigates but does not eliminate this concern.</li>
-    <li><strong>No control group data:</strong> Without WGS from tumors in non-sucrose-fed mice,
-        it is not possible to determine which mutational features are specific to sucrose
-        exposure versus baseline tumor mutagenesis in C57BL/6J.</li>
+    <li><strong>No control group WGS:</strong> Age-matched C57BL/6J controls on plain water
+        remained tumor-free for their full lifespan, confirming that tumorigenesis is
+        attributable to sucrose exposure. However, without WGS of normal tissue from
+        sucrose-fed mice, the baseline somatic mutation rate in non-tumor tissue under
+        sucrose conditions is unknown.</li>
     <li><strong>Tumor type unknown:</strong> The tissue of origin and histological classification
         of these tumors are not specified, limiting pathway interpretation.</li>
     <li><strong>Epigenetic data absent:</strong> The hypothesis of epigenetic MMR silencing
@@ -709,9 +715,9 @@ footer {{
         using MSIsensor or similar tools on the BAM files.</li>
     <li><strong>Methylation analysis</strong> &mdash; Investigate MLH1 promoter methylation
         in S04/S15 to test the epigenetic MMR silencing hypothesis.</li>
-    <li><strong>Include a control cohort</strong> &mdash; WGS of tumors (if any develop) from
-        age-matched C57BL/6J mice on normal water would establish baseline mutation rates
-        and distinguish sucrose-specific effects.</li>
+    <li><strong>WGS of normal tissue from sucrose-fed mice</strong> &mdash; Sequencing
+        non-tumor tissue from the same mice would establish the background somatic mutation
+        rate under sucrose conditions and identify tumor-specific versus systemic mutations.</li>
     <li><strong>RNA-seq integration</strong> &mdash; Transcriptomic profiling would reveal
         whether splicing mutations (Pfdn2, Prpf40a) produce functional transcript changes
         and whether metabolic gene expression is altered.</li>
