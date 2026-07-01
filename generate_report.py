@@ -261,6 +261,12 @@ footer {{
         <li><a href="#circos-cohort">Circos Plot — Cohort-Wide</a></li>
         <li><a href="#circos-samples">Circos Plots — Per-Sample</a></li>
         <li><a href="#circos-compare">Circos Plot — Comparative</a></li>
+        <li><a href="#chord-chrom">Chord Diagram — Chromosomes</a></li>
+        <li><a href="#chord-samples">Chord Diagram — Samples</a></li>
+        <li><a href="#chord-pathways">Chord Diagram — Pathways</a></li>
+        <li><a href="#circa-genome">Circa Plot — Genome-Wide</a></li>
+        <li><a href="#circa-samples">Circa Plots — Per-Sample</a></li>
+        <li><a href="#circa-circular">Circa Plot — Circular Multi-Track</a></li>
     </ol>
 </div>
 
@@ -936,6 +942,106 @@ footer {{
         Figure 29. Comparative circos plot showing variant density across four samples.
         The outermost ring (S15, red) and second ring (S04, blue) show substantially
         higher variant density than S16 (green) and S01 (purple).
+    </div>
+</div>
+
+<!-- ================================================================== -->
+<h2 id="chord-chrom">32. Chord Diagram &mdash; Chromosome Co-Mutation</h2>
+
+<p>
+    This chord diagram connects chromosomes that share coding gene mutations
+    (HIGH/MODERATE impact) within the same sample. Sector size is proportional
+    to the number of coding mutations per chromosome. Chords are shown for
+    chromosome pairs with shared mutations in 8+ samples.
+</p>
+
+<div class="figure-container">
+    <img src="data:image/png;base64,{filt_img_b64('22_chord_chromosome.png')}" alt="Chord Chromosome">
+    <div class="figure-caption">
+        Figure 30. Chromosome-to-chromosome co-mutation chord diagram.
+    </div>
+</div>
+
+<!-- ================================================================== -->
+<h2 id="chord-samples">33. Chord Diagram &mdash; Sample Co-Mutation</h2>
+
+<p>
+    This chord diagram connects samples that share coding gene mutations.
+    Sector size is proportional to the total number of coding mutations per sample.
+    S15 and S04 (hypermutated) show the strongest connections to other samples.
+</p>
+
+<div class="figure-container">
+    <img src="data:image/png;base64,{filt_img_b64('23_chord_samples.png')}" alt="Chord Samples">
+    <div class="figure-caption">
+        Figure 31. Sample-to-sample co-mutated genes chord diagram.
+    </div>
+</div>
+
+<!-- ================================================================== -->
+<h2 id="chord-pathways">34. Chord Diagram &mdash; Pathway Co-Mutation</h2>
+
+<p>
+    This chord diagram shows co-mutation relationships between biological pathways.
+    Chords connect pathways that share affected samples. Protein Folding and Cell
+    Proliferation pathways show the broadest co-mutation with other pathways.
+</p>
+
+<div class="figure-container">
+    <img src="data:image/png;base64,{filt_img_b64('24_chord_pathways.png')}" alt="Chord Pathways">
+    <div class="figure-caption">
+        Figure 32. Pathway co-mutation network. Sector size reflects the number of
+        samples affected by each pathway.
+    </div>
+</div>
+
+<!-- ================================================================== -->
+<h2 id="circa-genome">35. Circa Plot &mdash; Genome-Wide</h2>
+
+<p>
+    A linear genome-wide scatter plot (circa-style) shows all filtered somatic
+    variants mapped by genomic position (x-axis) and variant allele frequency
+    (y-axis). Points are colored by SNV substitution type, with HIGH impact
+    variants circled in red and annotated with gene names.
+</p>
+
+<div class="figure-container">
+    <img src="data:image/png;base64,{filt_img_b64('25_circa_genomewide.png')}" alt="Circa Genome-Wide">
+    <div class="figure-caption">
+        Figure 33. Genome-wide circa plot of all filtered somatic variants.
+        Chromosome boundaries are indicated by alternating background shading.
+    </div>
+</div>
+
+<!-- ================================================================== -->
+<h2 id="circa-samples">36. Circa Plots &mdash; Per-Sample</h2>
+
+<p>
+    Per-sample circa plots for four representative samples show the distribution
+    of somatic variants across the genome. The hypermutated samples (S15, S04) show
+    notably denser distributions compared to the typical sample (S01).
+</p>
+
+<div class="figure-container">
+    <img src="data:image/png;base64,{filt_img_b64('26_circa_per_sample.png')}" alt="Circa Per-Sample">
+    <div class="figure-caption">
+        Figure 34. Per-sample circa plots for S15, S04, S16, and S01.
+    </div>
+</div>
+
+<!-- ================================================================== -->
+<h2 id="circa-circular">37. Circa Plot &mdash; Circular Multi-Track</h2>
+
+<p>
+    A circular circa-style plot combining multiple data tracks around the mouse
+    genome: SNV density (outer ring, red), indel density (middle ring, blue),
+    and VAF scatter colored by functional impact (inner ring).
+</p>
+
+<div class="figure-container">
+    <img src="data:image/png;base64,{filt_img_b64('27_circa_circular.png')}" alt="Circa Circular">
+    <div class="figure-caption">
+        Figure 35. Circular multi-track circa plot with per-chromosome coloring.
     </div>
 </div>
 

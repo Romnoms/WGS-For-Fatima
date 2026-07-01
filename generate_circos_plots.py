@@ -180,7 +180,7 @@ def make_circos(df, title, filename, show_genes=True):
         chrom_size = CHROM_SIZES[chrom]
 
         # Chromosome label
-        sector.text(sector.name, r=115, fontsize=7, fontweight='bold')
+        sector.text(sector.name, r=120, fontsize=6, fontweight='bold')
 
         # Axis ticks on outer ring
         sector.axis(fc='#e8e8e8', ec='#333333', lw=0.8)
@@ -263,9 +263,9 @@ def make_circos(df, title, filename, show_genes=True):
 
     fig = circos.plotfig()
 
-    # Add title
-    fig.text(0.5, 0.97, title, ha='center', va='top',
-             fontsize=14, fontweight='bold')
+    # Add title — pushed higher to avoid chr label overlap
+    fig.text(0.5, 1.02, title, ha='center', va='top',
+             fontsize=13, fontweight='bold')
 
     # Add legend
     legend_elements = [
@@ -354,7 +354,7 @@ for sector in circos.sectors:
     positions = np.linspace(0, chrom_size, n_win + 1)
     x_mid = np.array([(positions[i] + positions[i+1]) / 2 for i in range(n_win)])
 
-    sector.text(sector.name, r=115, fontsize=7, fontweight='bold')
+    sector.text(sector.name, r=120, fontsize=6, fontweight='bold')
     sector.axis(fc='#f0f0f0', ec='#333333', lw=0.8)
 
     # One ring per sample
@@ -377,10 +377,10 @@ for sector in circos.sectors:
 
 fig = circos.plotfig()
 
-fig.text(0.5, 0.97,
+fig.text(0.5, 1.06,
          'Comparative Variant Density — 4 Representative Samples',
          ha='center', va='top', fontsize=14, fontweight='bold')
-fig.text(0.5, 0.94,
+fig.text(0.5, 1.02,
          'Concentric rings (outer to inner): S15, S04, S16, S01',
          ha='center', va='top', fontsize=10, color='gray')
 

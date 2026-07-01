@@ -230,6 +230,8 @@ footer {{
         <li><a href="#next">Recommended Next Steps</a></li>
         <li><a href="#genomic-landscape">Genomic Landscape &amp; Rainfall</a></li>
         <li><a href="#circos">Circos Visualizations</a></li>
+        <li><a href="#chord">Chord Diagrams</a></li>
+        <li><a href="#circa">Circa Plots</a></li>
     </ol>
 </div>
 
@@ -798,6 +800,64 @@ footer {{
     <div class="figure-caption">
         Figure 8. Comparative circos (outer to inner): S15 (red, hypermutated),
         S04 (blue, hypermutated), S16 (green, elevated), S01 (purple, typical).
+    </div>
+</div>
+
+<!-- ================================================================== -->
+<h2 id="chord">14. Chord Diagrams</h2>
+
+<p>
+    Chord diagrams visualize co-mutation relationships using adjacency matrices.
+    Three perspectives are shown: chromosome-to-chromosome, sample-to-sample,
+    and pathway-to-pathway co-mutation networks.
+</p>
+
+<div class="figure-container">
+    <img src="data:image/png;base64,{img_b64('22_chord_chromosome.png')}" alt="Chord Chromosomes">
+    <div class="figure-caption">
+        Figure 9. Chromosome co-mutation chord diagram. Chords connect chromosomes
+        sharing coding mutations in the same sample.
+    </div>
+</div>
+
+<div class="figure-container">
+    <img src="data:image/png;base64,{img_b64('23_chord_samples.png')}" alt="Chord Samples">
+    <div class="figure-caption">
+        Figure 10. Sample co-mutation chord diagram. S15 and S04 show the strongest
+        inter-sample connections due to their higher coding mutation counts.
+    </div>
+</div>
+
+<div class="figure-container">
+    <img src="data:image/png;base64,{img_b64('24_chord_pathways.png')}" alt="Chord Pathways">
+    <div class="figure-caption">
+        Figure 11. Pathway co-mutation network showing overlap between affected pathways.
+    </div>
+</div>
+
+<!-- ================================================================== -->
+<h2 id="circa">15. Circa Plots</h2>
+
+<p>
+    Circa-style plots provide a linear genome-wide view of somatic variant distribution,
+    with variants mapped by genomic position and colored by substitution type or
+    functional impact.
+</p>
+
+<div class="figure-container">
+    <img src="data:image/png;base64,{img_b64('25_circa_genomewide.png')}" alt="Circa Genome">
+    <div class="figure-caption">
+        Figure 12. Genome-wide circa plot. All filtered somatic variants plotted by
+        position (x) and VAF (y), colored by substitution type. HIGH impact variants
+        circled in red.
+    </div>
+</div>
+
+<div class="figure-container">
+    <img src="data:image/png;base64,{img_b64('27_circa_circular.png')}" alt="Circa Circular">
+    <div class="figure-caption">
+        Figure 13. Circular multi-track circa plot. Outer: SNV density, middle: indel
+        density, inner: VAF scatter colored by functional impact.
     </div>
 </div>
 

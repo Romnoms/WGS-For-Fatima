@@ -358,8 +358,9 @@ ax_d.set_xticks(range(len(sorted_labels)))
 ax_d.set_xticklabels(sorted_labels, rotation=0, ha='center', fontsize=9)
 ax_d.set_yticks(range(len(gene_names)))
 ax_d.set_yticklabels(gene_names, fontsize=9)
-ax_d.set_title('D.  Somatic Gene Mutation Landscape (HIGH/MODERATE impact, recurrent in >=3 samples)',
-               fontsize=13, fontweight='bold', loc='left', pad=10)
+ax_d.set_title('D.  Somatic Gene Mutation Landscape\n'
+               '     HIGH/MODERATE impact, recurrent in >=3 samples',
+               fontsize=12, fontweight='bold', loc='left', pad=8)
 
 # Recurrence annotation on right
 ax_d2 = ax_d.twinx()
