@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """
-WGS Filtered Analysis — Mouse Tumor Samples (GRCm39)
+WGS Filtered Analysis — Sucrose-Induced Tumors in C57BL/6J Mice (GRCm39)
 Generates figures from filtered somatic variant calls
 (post-MGP and cross-sample germline subtraction).
+Plain water controls remained tumor-free; GRCm39 from JAX C57BL/6J
+serves as the germline reference.
 """
 
 import os

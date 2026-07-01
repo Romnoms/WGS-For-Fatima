@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
 """
-Somatic Variant Filtering Pipeline
-Applies two-pass filtering to remove germline contamination from tumor-only calls:
+Somatic Variant Filtering Pipeline — Sucrose-Induced Tumors in C57BL/6J Mice
+Applies two-pass filtering to remove residual germline/artifact calls:
   1. MGP (Mouse Genomes Project) allele frequency filter — removes known strain variants
   2. Cross-sample recurrence filter — removes variants present in too many samples
+Note: Since tumors are C57BL/6J (JAX) and the GRCm39 reference is derived from the
+same strain, most true germline variants are not called. Remaining variants after
+filtering are expected to be somatic with high confidence. Plain water controls
+did not develop tumors, confirming sucrose as the causative factor.
 """
 
 import gzip

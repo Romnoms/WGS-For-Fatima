@@ -212,9 +212,10 @@ footer {{
 
 <header>
     <h1>Whole Genome Sequencing Analysis Report</h1>
-    <p>Mouse Tumor Samples &mdash; DRAGEN Somatic Variant Analysis</p>
+    <p>Sucrose-Induced Tumors in C57BL/6J (JAX) Mice &mdash; DRAGEN Somatic Variant Analysis</p>
     <div class="meta">
-        Reference Genome: GRCm39 (Mus musculus) &bull;
+        Reference Genome: GRCm39 (C57BL/6J) &bull;
+        Plain Water Controls: Tumor-Free for Full Lifespan &bull;
         Sequencing Project: 26034-04 &bull;
         Report Date: June 30, 2026
     </div>
@@ -245,6 +246,13 @@ footer {{
         <li><a href="#filt-vaf">Filtered VAF Distribution</a></li>
         <li><a href="#filt-chrom">Filtered Chromosomal Distribution</a></li>
         <li><a href="#filt-high">Filtered High Impact Variants</a></li>
+        <li><a href="#snv-indel">SNV:Indel Ratio &amp; MSI-like Phenotype</a></li>
+        <li><a href="#indel-sizes">Indel Size Distribution</a></li>
+        <li><a href="#vaf-depth">VAF vs Read Depth</a></li>
+        <li><a href="#mut-process">Mutational Process Summary</a></li>
+        <li><a href="#gene-landscape">Gene Mutation Landscape</a></li>
+        <li><a href="#pathways">Pathway-Level Mutations</a></li>
+        <li><a href="#ref-validation">Germline Reference Validation</a></li>
     </ol>
 </div>
 
@@ -252,14 +260,16 @@ footer {{
 <h2 id="overview">1. Study Overview</h2>
 
 <p>
-    This report summarizes whole genome sequencing (WGS) analysis of <strong>16 mouse tumor samples</strong>
-    on a <strong>C57BL/6J background</strong> (all confirmed tumor, no matched normal
-    controls available). Samples were sequenced on an Illumina platform (2x151 bp paired-end reads)
+    This report summarizes whole genome sequencing (WGS) analysis of <strong>16 tumor samples</strong>
+    from <strong>C57BL/6J (JAX) mice</strong> that received ad libitum sucrose water.
+    Age-matched controls on plain water <strong>remained tumor-free for their full
+    lifespan</strong>, confirming sucrose exposure as the causative factor for tumorigenesis.
+    Samples were sequenced on an Illumina platform (2x151 bp paired-end reads)
     and processed with the <strong>DRAGEN v13.021</strong> pipeline for alignment to the GRCm39
     reference genome and somatic variant calling in tumor-only mode. Variants were annotated with
-    Ensembl VEP. GRCm39 is derived directly from the C57BL/6J strain, so variants called against
-    this reference in B6J tumors are expected to be somatic in origin, with minimal germline
-    contamination after filtering.
+    Ensembl VEP. Since GRCm39 is derived directly from C57BL/6J (JAX), the reference genome
+    serves as the germline control &mdash; variants called against it are expected to be somatic
+    in origin, with minimal germline contamination after filtering.
 </p>
 
 <div class="stats-grid">
@@ -697,9 +707,106 @@ footer {{
     Full table available in <code>filtered_high_impact_variants.csv</code>.
 </p>
 
+<!-- ================================================================== -->
+<h2 id="snv-indel">20. SNV:Indel Ratio &amp; MSI-like Phenotype</h2>
+
+<p>
+    A key feature of this cohort is the high indel fraction. S04 (73%) and S15 (67%) show
+    indel-dominant mutation profiles consistent with microsatellite instability and replication
+    slippage, potentially linked to proliferative stress from chronic sucrose-driven
+    hyperinsulinemia.
+</p>
+
+<div class="figure-container">
+    <img src="data:image/png;base64,{filt_img_b64('10_snv_indel_ratio.png')}" alt="SNV:Indel Ratio">
+    <div class="figure-caption">
+        Figure 18. SNV vs indel composition across all samples. S04 and S15 show
+        an indel-dominant phenotype (73% and 67%) consistent with microsatellite instability.
+    </div>
+</div>
+
+<!-- ================================================================== -->
+<h2 id="indel-sizes">21. Indel Size Distribution</h2>
+
+<div class="figure-container">
+    <img src="data:image/png;base64,{filt_img_b64('11_indel_size_distribution.png')}" alt="Indel Sizes">
+    <div class="figure-caption">
+        Figure 19. Indel size distributions for representative samples. Short (1&ndash;5 bp)
+        insertions and deletions dominate, consistent with replication slippage at
+        microsatellite loci.
+    </div>
+</div>
+
+<!-- ================================================================== -->
+<h2 id="vaf-depth">22. VAF vs Read Depth</h2>
+
+<div class="figure-container">
+    <img src="data:image/png;base64,{filt_img_b64('12_vaf_vs_depth.png')}" alt="VAF vs Depth">
+    <div class="figure-caption">
+        Figure 20. Variant allele frequency vs read depth for filtered somatic variants.
+        The broad VAF spread confirms subclonal somatic origin.
+    </div>
+</div>
+
+<!-- ================================================================== -->
+<h2 id="mut-process">23. Mutational Process Summary</h2>
+
+<div class="figure-container">
+    <img src="data:image/png;base64,{filt_img_b64('13_mutation_process_summary.png')}" alt="Mutation Processes">
+    <div class="figure-caption">
+        Figure 21. Six-panel mutational process summary. C&gt;T transitions (SBS1, cell division
+        clock) dominate. S14 shows elevated T&gt;G (oxidative damage). TMB correlates with
+        indel fraction in hypermutated samples.
+    </div>
+</div>
+
+<!-- ================================================================== -->
+<h2 id="gene-landscape">24. Gene Mutation Landscape</h2>
+
+<div class="figure-container">
+    <img src="data:image/png;base64,{filt_img_b64('14_gene_landscape.png')}" alt="Gene Landscape">
+    <div class="figure-caption">
+        Figure 22. Oncoplot-style mutation landscape showing recurrent somatic gene mutations
+        (excluding polymorphic Vmn/Zfp/Or/Gm families). Pfdn2, Cdv3, and Prpf40a are the
+        most recurrently affected genes.
+    </div>
+</div>
+
+<!-- ================================================================== -->
+<h2 id="pathways">25. Pathway-Level Mutations</h2>
+
+<div class="figure-container">
+    <img src="data:image/png;base64,{filt_img_b64('15_pathway_mutations.png')}" alt="Pathway Mutations">
+    <div class="figure-caption">
+        Figure 23. Pathway-level summary of somatic mutations in sucrose-induced tumors.
+        Protein folding, cell proliferation, RNA splicing, and metabolic regulation pathways
+        are each affected in over half of samples.
+    </div>
+</div>
+
+<!-- ================================================================== -->
+<h2 id="ref-validation">26. Germline Reference Validation</h2>
+
+<p>
+    Since these are C57BL/6J mice purchased from JAX and GRCm39 is derived from the same
+    strain, the reference genome serves as the germline control. The figure below demonstrates
+    the effectiveness of this approach: the unfiltered germline peak at VAF ~0.5 is cleanly
+    removed, retaining somatic variants with a broader VAF distribution.
+</p>
+
+<div class="figure-container">
+    <img src="data:image/png;base64,{filt_img_b64('16_reference_validation.png')}" alt="Reference Validation">
+    <div class="figure-caption">
+        Figure 24. Somatic variant validation using GRCm39 as the JAX C57BL/6J germline
+        reference. Left: VAF distribution before (gray) and after (green) filtering.
+        Right: 88.9% of variants removed as germline/artifact, 11.1% retained as somatic.
+    </div>
+</div>
+
 <footer>
-    WGS Analysis Report &bull; Project 26034-04 &bull; Generated June 30, 2026<br>
-    Reference: GRCm39 (Mus musculus) &bull; Pipeline: DRAGEN v13.021 + Ensembl VEP<br>
+    WGS Analysis Report &bull; Project 26034-04 &bull; June 30, 2026<br>
+    Sucrose-Induced Tumors in C57BL/6J (JAX) &bull; Plain Water Controls: Tumor-Free<br>
+    Reference: GRCm39 (C57BL/6J) &bull; Pipeline: DRAGEN v13.021 + Ensembl VEP<br>
     Germline filtering: MGP AF &ge; 1% + cross-sample recurrence &gt; 10/16
 </footer>
 

@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 """
-WGS Analysis Pipeline — Mouse Tumor Samples (GRCm39)
+WGS Analysis Pipeline — Sucrose-Induced Tumors in C57BL/6J Mice (GRCm39)
 Generates publication-quality figures from DRAGEN somatic variant calls.
+Mice received ad libitum sucrose water; age-matched plain water controls
+remained tumor-free for full lifespan. GRCm39 (derived from C57BL/6J, JAX)
+serves as the germline reference.
 """
 
 import os
