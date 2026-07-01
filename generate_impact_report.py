@@ -228,6 +228,8 @@ footer {{
         <li><a href="#sucrose">Relevance to Sucrose Exposure</a></li>
         <li><a href="#limitations">Limitations</a></li>
         <li><a href="#next">Recommended Next Steps</a></li>
+        <li><a href="#genomic-landscape">Genomic Landscape &amp; Rainfall</a></li>
+        <li><a href="#circos">Circos Visualizations</a></li>
     </ol>
 </div>
 
@@ -729,8 +731,78 @@ footer {{
 </ol>
 
 
+<!-- ================================================================== -->
+<h2 id="genomic-landscape">12. Genomic Landscape &amp; Rainfall Plots</h2>
+
+<p>
+    An integrated multi-panel genomic landscape figure provides a comprehensive view of
+    the somatic mutation profile across all samples, inspired by Cancer Discovery
+    publications (Li et al., 2025). Samples are sorted by descending TMB.
+</p>
+
+<div class="figure-container">
+    <img src="data:image/png;base64,{img_b64('17_genomic_landscape.png')}" alt="Genomic Landscape">
+    <div class="figure-caption">
+        Figure 5. Multi-panel genomic landscape. (A) TMB by variant type, (B) 6-class
+        mutation spectrum proportions, (C) rainfall plot for highest-TMB sample with
+        kataegis threshold, (D) oncoplot of recurrent gene mutations.
+    </div>
+</div>
+
+<h3>Rainfall Plots</h3>
+
+<p>
+    Rainfall plots visualize inter-mutation distance (IMD) across the genome for each SNV.
+    Clusters below the 1 kb threshold (red dashed line) may indicate localized
+    hypermutation events (kataegis). The hypermutated samples S15 and S04 show denser
+    mutation patterns with more potential kataegis regions than typical samples.
+</p>
+
+<div class="figure-container">
+    <img src="data:image/png;base64,{img_b64('18_rainfall_plots.png')}" alt="Rainfall Plots">
+    <div class="figure-caption">
+        Figure 6. Rainfall plots for S15 (hypermutated), S04 (hypermutated), S16 (elevated),
+        and S01 (typical). Points colored by substitution type.
+    </div>
+</div>
+
+<!-- ================================================================== -->
+<h2 id="circos">13. Circos Visualizations</h2>
+
+<p>
+    Circos plots provide a genome-wide circular view of somatic variant distribution
+    across all mouse chromosomes (GRCm39). Tracks from outside to inside show: variant
+    density heatmap (2 Mb windows), C&gt;T and T&gt;C density, indel density, and HIGH
+    impact variant positions.
+</p>
+
+<h3>Cohort-Wide Circos</h3>
+
+<div class="figure-container">
+    <img src="data:image/png;base64,{img_b64('19_circos_cohort.png')}" alt="Circos Cohort">
+    <div class="figure-caption">
+        Figure 7. Cohort-wide circos aggregating all 113,154 filtered somatic variants.
+        Variant density hotspots are visible across several chromosomes.
+    </div>
+</div>
+
+<h3>Comparative Multi-Sample Circos</h3>
+
+<p>
+    Concentric rings compare variant density across four representative samples,
+    directly visualizing the mutation load difference between hypermutated and typical tumors.
+</p>
+
+<div class="figure-container">
+    <img src="data:image/png;base64,{img_b64('21_circos_comparative.png')}" alt="Circos Comparative">
+    <div class="figure-caption">
+        Figure 8. Comparative circos (outer to inner): S15 (red, hypermutated),
+        S04 (blue, hypermutated), S16 (green, elevated), S01 (purple, typical).
+    </div>
+</div>
+
 <footer>
-    Biological Impact Report &bull; Project 26034-04 &bull; June 30, 2026<br>
+    Biological Impact Report &bull; Project 26034-04 &bull; July 1, 2026<br>
     C57BL/6J Tumor Samples &bull; Ad Libitum Sucrose Water &bull; GRCm39 + DRAGEN v13.021 + VEP
 </footer>
 

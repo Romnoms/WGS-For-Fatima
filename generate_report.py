@@ -254,6 +254,14 @@ footer {{
         <li><a href="#pathways">Pathway-Level Mutations</a></li>
         <li><a href="#ref-validation">Germline Reference Validation</a></li>
     </ol>
+    <h3 style="margin-top:1rem;">Part III: Genomic Landscape &amp; Circos</h3>
+    <ol start="27">
+        <li><a href="#landscape">Genomic Landscape Overview</a></li>
+        <li><a href="#rainfall">Rainfall Plots</a></li>
+        <li><a href="#circos-cohort">Circos Plot — Cohort-Wide</a></li>
+        <li><a href="#circos-samples">Circos Plots — Per-Sample</a></li>
+        <li><a href="#circos-compare">Circos Plot — Comparative</a></li>
+    </ol>
 </div>
 
 <!-- ================================================================== -->
@@ -803,8 +811,136 @@ footer {{
     </div>
 </div>
 
+<!-- ================================================================== -->
+<!-- PART III: GENOMIC LANDSCAPE & CIRCOS                              -->
+<!-- ================================================================== -->
+
+<header style="margin-top:3rem;">
+    <h1>Part III: Genomic Landscape &amp; Circos Visualizations</h1>
+    <p>Multi-Panel Landscape, Rainfall Plots &amp; Circos Plots</p>
+</header>
+
+<h2 id="landscape">27. Genomic Landscape Overview</h2>
+
+<p>
+    A multi-panel genomic landscape figure inspired by Cancer Discovery publications
+    (Li et al., 2025) provides an integrated view of the somatic mutation profile
+    across all samples. Samples are sorted by TMB (highest to lowest) for visual clarity.
+</p>
+
+<ul>
+    <li><strong>Panel A:</strong> Tumor mutational burden stacked by variant type (SNV, insertion, deletion, MNV)</li>
+    <li><strong>Panel B:</strong> Relative SNV mutation spectrum (6-class substitution proportions)</li>
+    <li><strong>Panel C:</strong> Rainfall plot showing inter-mutation distance across the genome for the highest-TMB sample, with the remaining cohort in gray</li>
+    <li><strong>Panel D:</strong> Oncoplot showing recurrent gene mutations (HIGH/MODERATE impact, &ge;3 samples)</li>
+</ul>
+
+<div class="figure-container">
+    <img src="data:image/png;base64,{filt_img_b64('17_genomic_landscape.png')}" alt="Genomic Landscape">
+    <div class="figure-caption">
+        Figure 25. Multi-panel genomic landscape of somatic mutations in sucrose-induced
+        mouse tumors. Samples are ordered by descending TMB. The rainfall plot highlights
+        potential kataegis events (clusters below the 1 kb threshold line).
+    </div>
+</div>
+
+<!-- ================================================================== -->
+<h2 id="rainfall">28. Rainfall Plots</h2>
+
+<p>
+    Rainfall plots show the inter-mutation distance (IMD) for each SNV plotted against
+    its genomic position. Clusters of mutations with short IMD (&lt;1 kb, below the
+    dashed red line) may indicate localized hypermutation events (kataegis). Points are
+    colored by substitution type. Four representative samples are shown: two hypermutated
+    (S15, S04), one elevated (S16), and one typical (S01).
+</p>
+
+<div class="figure-container">
+    <img src="data:image/png;base64,{filt_img_b64('18_rainfall_plots.png')}" alt="Rainfall Plots">
+    <div class="figure-caption">
+        Figure 26. Rainfall plots for four representative samples. S15 and S04 show
+        denser mutation patterns with more potential kataegis events. Chromosome
+        boundaries are indicated by vertical gray lines.
+    </div>
+</div>
+
+<!-- ================================================================== -->
+<h2 id="circos-cohort">29. Circos Plot &mdash; Cohort-Wide</h2>
+
+<p>
+    The circos plot provides a genome-wide view of somatic variant distribution across
+    all mouse chromosomes (GRCm39). Concentric tracks from outside to inside show:
+    variant density heatmap (2 Mb windows), C&gt;T and T&gt;C substitution density,
+    indel density, and HIGH impact variant positions (red dots).
+</p>
+
+<div class="figure-container">
+    <img src="data:image/png;base64,{filt_img_b64('19_circos_cohort.png')}" alt="Circos Cohort">
+    <div class="figure-caption">
+        Figure 27. Cohort-wide circos plot aggregating all 113,154 filtered somatic
+        variants across 16 tumor samples. Hotspots of variant density are visible on
+        several chromosomes.
+    </div>
+</div>
+
+<!-- ================================================================== -->
+<h2 id="circos-samples">30. Circos Plots &mdash; Per-Sample</h2>
+
+<p>
+    Individual circos plots for four representative samples reveal distinct patterns
+    of genomic involvement. The hypermutated samples (S15, S04) show substantially
+    denser tracks across all chromosomes compared to the typical sample (S01).
+</p>
+
+<div class="figure-container">
+    <img src="data:image/png;base64,{filt_img_b64('20_circos_S15.png')}" alt="Circos S15">
+    <div class="figure-caption">
+        Figure 28a. Circos plot for S15 (hypermutated, TMB=6.4 mut/Mb, 67% indels).
+    </div>
+</div>
+
+<div class="figure-container">
+    <img src="data:image/png;base64,{filt_img_b64('20_circos_S04.png')}" alt="Circos S04">
+    <div class="figure-caption">
+        Figure 28b. Circos plot for S04 (hypermutated, TMB=5.3 mut/Mb, 75% indels).
+    </div>
+</div>
+
+<div class="figure-container">
+    <img src="data:image/png;base64,{filt_img_b64('20_circos_S16.png')}" alt="Circos S16">
+    <div class="figure-caption">
+        Figure 28c. Circos plot for S16 (elevated, TMB=3.3 mut/Mb).
+    </div>
+</div>
+
+<div class="figure-container">
+    <img src="data:image/png;base64,{filt_img_b64('20_circos_S01.png')}" alt="Circos S01">
+    <div class="figure-caption">
+        Figure 28d. Circos plot for S01 (typical, TMB=1.8 mut/Mb).
+    </div>
+</div>
+
+<!-- ================================================================== -->
+<h2 id="circos-compare">31. Circos Plot &mdash; Comparative</h2>
+
+<p>
+    A comparative circos plot overlays variant density for four representative samples
+    using concentric rings (outer to inner: S15, S04, S16, S01). This directly visualizes
+    the difference in mutation load and genomic distribution between hypermutated and
+    typical samples.
+</p>
+
+<div class="figure-container">
+    <img src="data:image/png;base64,{filt_img_b64('21_circos_comparative.png')}" alt="Circos Comparative">
+    <div class="figure-caption">
+        Figure 29. Comparative circos plot showing variant density across four samples.
+        The outermost ring (S15, red) and second ring (S04, blue) show substantially
+        higher variant density than S16 (green) and S01 (purple).
+    </div>
+</div>
+
 <footer>
-    WGS Analysis Report &bull; Project 26034-04 &bull; June 30, 2026<br>
+    WGS Analysis Report &bull; Project 26034-04 &bull; July 1, 2026<br>
     Sucrose-Induced Tumors in C57BL/6J (JAX) &bull; Plain Water Controls: Tumor-Free<br>
     Reference: GRCm39 (C57BL/6J) &bull; Pipeline: DRAGEN v13.021 + Ensembl VEP<br>
     Germline filtering: MGP AF &ge; 1% + cross-sample recurrence &gt; 10/16
